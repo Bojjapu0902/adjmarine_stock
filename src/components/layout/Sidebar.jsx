@@ -3,30 +3,31 @@ import { NavLink, useLocation } from 'react-router-dom';
 import {
   MdDashboard, MdInventory, MdShoppingCart, MdPeople,
   MdDeleteSweep, MdBarChart, MdSettings, MdLogout,
-  MdRestaurant,
+  MdRestaurant, MdSystemUpdateAlt,
 } from 'react-icons/md';
 
 const navItems = [
   {
     section: 'Main',
     links: [
-      { to: '/',           icon: <MdDashboard />,   label: 'Dashboard',         badge: null },
-      { to: '/inventory',  icon: <MdInventory />,   label: 'Inventory',         badge: '5' },
-      { to: '/orders',     icon: <MdShoppingCart />, label: 'Purchase Orders',   badge: null },
-      { to: '/suppliers',  icon: <MdPeople />,      label: 'Suppliers',         badge: null },
-      { to: '/wastage',    icon: <MdDeleteSweep />, label: 'Wastage Log',       badge: null },
+      { to: '/',              icon: <MdDashboard />,       label: 'Dashboard',       badge: null },
+      { to: '/inventory',     icon: <MdInventory />,       label: 'Inventory',       badge: '5' },
+      { to: '/stock-update',  icon: <MdSystemUpdateAlt />, label: 'Update Stock',    badge: null },
+      { to: '/orders',        icon: <MdShoppingCart />,    label: 'Purchase Orders', badge: null },
+      { to: '/suppliers',     icon: <MdPeople />,          label: 'Suppliers',       badge: null },
+      { to: '/wastage',       icon: <MdDeleteSweep />,     label: 'Wastage Log',     badge: null },
     ],
   },
   {
     section: 'Analytics',
     links: [
-      { to: '/reports',    icon: <MdBarChart />,    label: 'Reports',           badge: null },
+      { to: '/reports', icon: <MdBarChart />, label: 'Reports', badge: null },
     ],
   },
   {
     section: 'System',
     links: [
-      { to: '/settings',   icon: <MdSettings />,    label: 'Settings',          badge: null },
+      { to: '/settings', icon: <MdSettings />, label: 'Settings', badge: null },
     ],
   },
 ];

@@ -244,6 +244,34 @@ export const itemUsageData = {
 };
 
 /* ══════════════════════════════════════════════════════
+   STOCK TRANSACTIONS — IN (received) & OUT (usage)
+   ══════════════════════════════════════════════════════ */
+export const stockTransactions = [
+  // IN — received from supplier
+  { id: 'TXN-001', date: '2026-05-29', itemId: 'INV-001', item: 'Basmati Rice',       category: 'Grains',      type: 'IN',  qty: 200,  unit: 'kg',  unitCost: 1.80,  totalCost: 360.00, supplier: 'AgroSource Ltd',   usageType: null,         loggedBy: 'John K.',   notes: 'Monthly grain restock' },
+  { id: 'TXN-002', date: '2026-05-28', itemId: 'INV-003', item: 'Chicken Breast',     category: 'Meat',        type: 'IN',  qty: 80,   unit: 'kg',  unitCost: 5.20,  totalCost: 416.00, supplier: 'Prime Poultry Co', usageType: null,         loggedBy: 'Maria S.',  notes: 'Urgent poultry restock' },
+  { id: 'TXN-003', date: '2026-05-27', itemId: 'INV-007', item: 'Whole Milk',         category: 'Dairy',       type: 'IN',  qty: 120,  unit: 'L',   unitCost: 0.95,  totalCost: 114.00, supplier: 'DairyBest Co',     usageType: null,         loggedBy: 'John K.',   notes: '' },
+  { id: 'TXN-004', date: '2026-05-26', itemId: 'INV-005', item: 'All-Purpose Flour',  category: 'Baking',      type: 'IN',  qty: 150,  unit: 'kg',  unitCost: 0.75,  totalCost: 112.50, supplier: 'Miller & Sons',    usageType: null,         loggedBy: 'Chef Marco',notes: 'Quarterly baking stock' },
+  { id: 'TXN-005', date: '2026-05-25', itemId: 'INV-020', item: 'Shrimp (Frozen)',    category: 'Seafood',     type: 'IN',  qty: 50,   unit: 'kg',  unitCost: 9.80,  totalCost: 490.00, supplier: 'Ocean Fresh Ltd',  usageType: null,         loggedBy: 'Maria S.',  notes: 'Banquet prep restock' },
+  { id: 'TXN-006', date: '2026-05-24', itemId: 'INV-014', item: 'Eggs (Large)',       category: 'Dairy',       type: 'IN',  qty: 60,   unit: 'doz', unitCost: 3.20,  totalCost: 192.00, supplier: 'FarmFresh Eggs',   usageType: null,         loggedBy: 'John K.',   notes: '' },
+  { id: 'TXN-007', date: '2026-05-23', itemId: 'INV-015', item: 'Pasta (Penne)',      category: 'Grains',      type: 'IN',  qty: 80,   unit: 'kg',  unitCost: 1.10,  totalCost: 88.00,  supplier: 'Italian Imports',  usageType: null,         loggedBy: 'Chef Marco',notes: 'Banquet menu pasta' },
+  { id: 'TXN-008', date: '2026-05-22', itemId: 'INV-011', item: 'Beef Tenderloin',    category: 'Meat',        type: 'IN',  qty: 60,   unit: 'kg',  unitCost: 22.00, totalCost: 1320.00,supplier: 'Prime Cuts Inc',   usageType: null,         loggedBy: 'Maria S.',  notes: 'Premium event beef' },
+  // OUT — kitchen usage / consumption
+  { id: 'TXN-009', date: '2026-05-29', itemId: 'INV-001', item: 'Basmati Rice',       category: 'Grains',      type: 'OUT', qty: 18,   unit: 'kg',  unitCost: 1.80,  totalCost: 32.40,  supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Chef Marco',notes: 'Dinner service' },
+  { id: 'TXN-010', date: '2026-05-29', itemId: 'INV-007', item: 'Whole Milk',         category: 'Dairy',       type: 'OUT', qty: 22,   unit: 'L',   unitCost: 0.95,  totalCost: 20.90,  supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Chef Marco',notes: 'Breakfast service' },
+  { id: 'TXN-011', date: '2026-05-28', itemId: 'INV-003', item: 'Chicken Breast',     category: 'Meat',        type: 'OUT', qty: 14,   unit: 'kg',  unitCost: 5.20,  totalCost: 72.80,  supplier: null,               usageType: 'Event',      loggedBy: 'John K.',   notes: 'Private dinner event' },
+  { id: 'TXN-012', date: '2026-05-28', itemId: 'INV-005', item: 'All-Purpose Flour',  category: 'Baking',      type: 'OUT', qty: 14,   unit: 'kg',  unitCost: 0.75,  totalCost: 10.50,  supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Chef Marco',notes: 'Baking for the day' },
+  { id: 'TXN-013', date: '2026-05-27', itemId: 'INV-011', item: 'Beef Tenderloin',    category: 'Meat',        type: 'OUT', qty: 7,    unit: 'kg',  unitCost: 22.00, totalCost: 154.00, supplier: null,               usageType: 'Event',      loggedBy: 'Chef Marco',notes: 'Gala dinner' },
+  { id: 'TXN-014', date: '2026-05-27', itemId: 'INV-010', item: 'Cooking Sugar',      category: 'Baking',      type: 'OUT', qty: 9,    unit: 'kg',  unitCost: 0.65,  totalCost: 5.85,   supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Maria S.',  notes: '' },
+  { id: 'TXN-015', date: '2026-05-26', itemId: 'INV-014', item: 'Eggs (Large)',       category: 'Dairy',       type: 'OUT', qty: 8,    unit: 'doz', unitCost: 3.20,  totalCost: 25.60,  supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Chef Marco',notes: 'Breakfast buffet' },
+  { id: 'TXN-016', date: '2026-05-26', itemId: 'INV-009', item: 'Black Pepper',       category: 'Spices',      type: 'OUT', qty: 0.4,  unit: 'kg',  unitCost: 15.00, totalCost: 6.00,   supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Chef Marco',notes: '' },
+  { id: 'TXN-017', date: '2026-05-25', itemId: 'INV-015', item: 'Pasta (Penne)',      category: 'Grains',      type: 'OUT', qty: 6,    unit: 'kg',  unitCost: 1.10,  totalCost: 6.60,   supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Maria S.',  notes: 'Lunch service' },
+  { id: 'TXN-018', date: '2026-05-24', itemId: 'INV-018', item: 'Heavy Cream',        category: 'Dairy',       type: 'OUT', qty: 5,    unit: 'L',   unitCost: 4.20,  totalCost: 21.00,  supplier: null,               usageType: 'Daily Consumption', loggedBy: 'Chef Marco', notes: 'Sauce prep' },
+  { id: 'TXN-019', date: '2026-05-24', itemId: 'INV-020', item: 'Shrimp (Frozen)',    category: 'Seafood',     type: 'OUT', qty: 8,    unit: 'kg',  unitCost: 9.80,  totalCost: 78.40,  supplier: null,               usageType: 'Event',      loggedBy: 'John K.',   notes: 'Seafood night' },
+  { id: 'TXN-020', date: '2026-05-23', itemId: 'INV-013', item: 'Canola Oil',         category: 'Oils & Fats', type: 'OUT', qty: 4,    unit: 'L',   unitCost: 2.40,  totalCost: 9.60,   supplier: null,               usageType: 'Kitchen Use',loggedBy: 'Chef Marco',notes: 'Frying station' },
+];
+
+/* ══════════════════════════════════════════════════════
    getEnrichedItems — merges inventoryItems + itemUsageData
    ══════════════════════════════════════════════════════ */
 export const getUrgencyType = (daysRemaining) => {

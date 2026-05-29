@@ -5,6 +5,7 @@ import Loader          from './components/common/Loader';
 import Login           from './pages/Login';
 import Dashboard       from './pages/Dashboard';
 import Inventory       from './pages/Inventory';
+import UpdateStock     from './pages/UpdateStock';
 import PurchaseOrders  from './pages/PurchaseOrders';
 import Suppliers       from './pages/Suppliers';
 import Wastage         from './pages/Wastage';
@@ -47,14 +48,15 @@ const App = () => {
     <BrowserRouter>
       <Layout user={user} onLogout={handleLogout}>
         <Routes>
-          <Route path="/"          element={<Dashboard />}      />
-          <Route path="/inventory" element={<Inventory />}      />
-          <Route path="/orders"    element={<PurchaseOrders />} />
-          <Route path="/suppliers" element={<Suppliers />}      />
-          <Route path="/wastage"   element={<Wastage />}        />
-          <Route path="/reports"   element={<Reports />}        />
-          <Route path="/settings"  element={<Settings />}       />
-          <Route path="*"          element={<Navigate to="/" replace />} />
+          <Route path="/"             element={<Dashboard />}      />
+          <Route path="/inventory"    element={<Inventory />}      />
+          <Route path="/stock-update" element={<UpdateStock />}    />
+          <Route path="/orders"       element={<PurchaseOrders />} />
+          <Route path="/suppliers"    element={<Suppliers />}      />
+          <Route path="/wastage"      element={<Wastage />}        />
+          <Route path="/reports"      element={<Reports />}        />
+          <Route path="/settings"     element={<Settings />}       />
+          <Route path="*"             element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
     </BrowserRouter>
